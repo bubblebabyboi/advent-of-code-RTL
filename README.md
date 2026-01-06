@@ -4,26 +4,32 @@ My solutions for the Advent of Code 2025 written in SystemVerilog with testbench
 
 ## Running the tests
 
-To run the tests, you need to have cocotb installed. You can install it with pip:
+To run the tests, you need to have cocotb & verilator installed. You can install the dependencies with the following commands:
 
+**Mac:**
 ```bash
+brew install verilator
+pip install cocotb
+brew install --cask gtkwave  # optional
+```
+
+**Linux:**
+```bash
+sudo apt install verilator python3-pip gtkwave
 pip install cocotb
 ```
 
-Then you can run the tests with:
+## Makefile
+
 ```bash
-make test
+make help         # Shows commands
+
+make DAY=N        # Runs day N
+make clean DAY=N  # Cleans day N
+
+make all          # Runs all days
+make clean-all    # Cleans all days
+
 ```
 
-You can run the tests for a specific day with:
-```bash
-make test DAY=1
-```
-## Project structure
-
-The project is organized into the following directories:
-
-- `day_<number>`: The directory for the day's solutions.
-- `day_<number>/day_<number>.sv`: The main module for the day's solution.
-- `day_<number>/input.txt`: The input file for the testbench.
-- `day_<number>/day_<number>_tb.py`: The cocotb test for the day's solution.
+Waveforms saved to `day_N/results/wave.vcd` can be viewed with gtkwave or your waveform viewer of choice.
