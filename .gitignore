@@ -1,0 +1,21 @@
+# Build artifacts
+sim_build/
+__pycache__/
+*.pyc
+
+# Waveforms
+*.vcd
+*.fst
+*.ghw
+
+# Test results
+results/
+results.xml
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# macOS
+.DS_Store
